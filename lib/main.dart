@@ -1,4 +1,4 @@
-import 'package:favorite_places/screen/favorite_places.dart';
+import 'package:favorite_places/screen/places.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Great Places',
       theme: theme,
-      home: const FavoritePlacesScreen(),
+      home: const PlacesScreen(),
     );
   }
 }

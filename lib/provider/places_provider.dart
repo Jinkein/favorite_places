@@ -1,19 +1,15 @@
 import 'package:favorite_places/models/place.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// final placesProvider = Provider(
-//   (ref) {
-//     return dummyPlaces;
-//   },
-// );
-class PlacesProviderNotifier extends StateNotifier<List<PlaceItem>> {
-  PlacesProviderNotifier() : super([]);
-  void addPlace(PlaceItem place) {
-    state = [...state, place];
+class PlacesProviderNotifier extends StateNotifier<List<Place>> {
+  PlacesProviderNotifier() : super(const []);
+  void addPlace(String title) {
+    final newPlace = Place(title: title);
+    state = [...state, newPlace];
   }
 }
 
-final placesProvider =
-    StateNotifierProvider<PlacesProviderNotifier, List<PlaceItem>>(
+final userPlacesProvider =
+    StateNotifierProvider<PlacesProviderNotifier, List<Place>>(
   (ref) => PlacesProviderNotifier(),
 );
